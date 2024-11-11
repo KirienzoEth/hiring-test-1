@@ -1,5 +1,6 @@
 {
   "image": "ghcr.io/foundry-rs/foundry:latest",
+  "postAttachCommand": "forge soldeer install",
   "customizations": {
     "codespaces": {
       "openFiles": ["src/Lottery.sol"]
