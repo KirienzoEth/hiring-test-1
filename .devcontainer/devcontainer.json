@@ -1,0 +1,11 @@
+{
+  "image": "ghcr.io/foundry-rs/foundry:latest",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["src/Lottery.sol"]
+    },
+    "vscode": {
+      "extensions": ["nomicfoundation.hardhat-solidity"]
+    }
+  }
+}
