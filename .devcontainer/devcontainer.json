@@ -6,7 +6,10 @@
       "openFiles": ["src/Lottery.sol"]
     },
     "vscode": {
-      "extensions": ["nomicfoundation.hardhat-solidity"]
+      "extensions": [
+        "nomicfoundation.hardhat-solidity",
+        "MS-vsliveshare.vsliveshare"
+      ]
     }
   }
 }
